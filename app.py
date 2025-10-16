@@ -117,9 +117,11 @@ class F1PredictionApp:
                     value=1
                 )
 
-                year = st.selectbox(
+                year = st.slider(
                     "Year",
-                    [2025, 2026],
+                    min_value=1950,
+                    max_value=2030,
+                    value=2026
                 )
 
                 loc = st.selectbox(
