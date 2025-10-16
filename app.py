@@ -167,7 +167,7 @@ class F1PredictionApp:
                     })
 
                     with st.container(width='stretch', horizontal_alignment='center'):
-                        st.bar_chart(prob_df.set_index('Prediction'), horizontal=True, color=[(0,255,0)])
+                        st.bar_chart(prob_df.set_index('Prediction'), horizontal=True, height=300, color=[(0,255,0)])
 
                     st.divider()
                     st.subheader("Detailed Probabilities")
