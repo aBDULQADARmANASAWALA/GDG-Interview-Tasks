@@ -210,21 +210,23 @@ class F1PredictionApp:
                         # st.markdown(f"# {max_prob:.1f}%")
 
                     # Show probability distribution
-                    st.subheader("Position Probabilities")
+                    st.subheader("Prediction Probabilities")
 
                     # Create probability chart
-                    positions = range(1, len(probabilities) + 1)
+                    prediction = [0,1]
                     prob_df = pd.DataFrame({
-                        'Position': positions,
+                        'Prediction': prediction,
                         'Probability': probabilities * 100
                     })
 
-                    st.bar_chart(prob_df.set_index('Position'))
+                    st.bar_chart(prob_df.set_index('Prediction'))
 
                     # Show detailed probabilities
                     st.subheader("Detailed Probabilities")
-                    for pos, prob in zip(positions, probabilities):
-                        st.write(f"Position {pos}: {prob*100:.2f}%")
+                    # for pos, prob in zip(prediction, probabilities):
+                    #     st.write(f"Prediction {pos}: {prob*100:.2f}%")
+                    st.write(f'Will Not Finish (0): {probabilities[0]*100:.2f}%')
+                    st.write(f'Will Finish (1): {probabilities[1]*100:.2f}%')
 
         # Model information section
         with st.expander("Model Information"):
